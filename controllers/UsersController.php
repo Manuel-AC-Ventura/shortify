@@ -76,8 +76,9 @@ class UsersController extends Controller{
 
 	public function delete($id){
 		$users = new Users();
-		$users->delete($id);
-		header("Location: ".BASE_URL);
+		if($users->delete($id)){
+			header("Location: ".BASE_URL);
+		}
 	}
 
 	public function logout(){

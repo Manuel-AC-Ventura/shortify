@@ -18,4 +18,5 @@
 		<?php endif; ?>
 
 		<input type="submit" value="Salvar Alterações">
+		<a class="btn-delete" href="<?=BASE_URL?>/users/delete/<?=$_SESSION['shortify']?>">Apagar</a>
 	</form>
