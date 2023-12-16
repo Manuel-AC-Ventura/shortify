@@ -1,0 +1,130 @@
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f8f9fa;
+	color: #333;
+}
+.header {
+	background-color: #007bff;
+	color: #fff;
+	padding: 15px 0;
+	text-align: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header a {
+	color: #fff;
+	text-decoration: none;
+	margin: 0 20px;
+	font-size: 18px;
+	font-weight: bold;
+	transition: color 0.3s ease;
+}
+
+.header a:hover {
+	color: #0056b3;
+}
+
+.header span {
+	color: #fff;
+	margin: 0 20px;
+	font-size: 16px;
+	opacity: 0.7;
+}
+.container {
+	width: 90%;
+	margin: 30px auto;
+	padding: 20px;
+	background-color: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+}
+h1 {
+	font-size: 28px;
+	margin-bottom: 20px;
+	text-align: center;
+	color: #007bff;
+}
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 20px;
+}
+th, td {
+	border: 1px solid #ccc;
+	padding: 10px;
+	text-align: left;
+}
+th {
+	background-color: #f2f2f2;
+}
+a {
+	color: #007bff;
+	text-decoration: none;
+}
+td a:hover {
+	text-decoration: underline;
+}
+.action-buttons {
+	gap: .5rem;
+	display: flex;
+	justify-content: center;
+}
+.action-buttons button {
+	margin-right: 5px;
+	padding: 10px;
+	border: none;
+	font-size: 14px;
+	font-weight: bold;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+.action-buttons button:hover {
+	opacity: 0.8;
+}
+.btn-open {
+	background-color: #28a745;
+	color: #fff;
+}
+.btn-edit {
+	background-color: #0787ff;
+	color: #333;
+	color: #fff;
+}
+.btn-delete {
+	background-color: #dc3545;
+	color: #fff;
+}
+.pagination {
+	margin-top: 20px;
+	text-align: center;
+}
+.pagination a {
+	display: inline-block;
+	padding: 8px 16px;
+	margin: 0 4px;
+	background-color: #007bff;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 3px;
+}
+.pagination a:hover {
+	background-color: #0056b3;
+}
+@media screen and (max-width: 768px) {
+	.container {
+		width: 100%;
+		border-radius: 0;
+	}
+	h1 {
+		font-size: 24px;
+	}
+	
+}

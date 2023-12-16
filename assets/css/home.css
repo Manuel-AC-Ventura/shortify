@@ -1,0 +1,109 @@
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f8f9fa;
+}
+.header {
+	background-color: #007bff;
+	color: #fff;
+	padding: 15px 0;
+	text-align: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header a {
+	color: #fff;
+	text-decoration: none;
+	margin: 0 20px;
+	font-size: 18px;
+	font-weight: bold;
+	transition: color 0.3s ease;
+}
+
+.header a:hover {
+	color: #0056b3;
+}
+
+.header span {
+	color: #fff;
+	margin: 0 20px;
+	font-size: 16px;
+	opacity: 0.7;
+}
+.container {
+	width: 50%;
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 50px;
+}
+h1 {
+	color: #333;
+	margin-bottom: 30px;
+}
+#urlInput {
+	width: 100%;
+	padding: 15px;
+	margin-bottom: 20px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+.warning {
+    color: red;
+    margin-bottom: 20px;
+    font-size: 14px;
+	font-weight: bold;
+}
+#shortenBtn {
+	padding: 15px 30px;
+	font-size: 16px;
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+#shortenBtn:hover {
+	background-color: #0056b3;
+}
+#shortenedUrl {
+	margin-top: 40px;
+	font-size: 18px;
+	color: #333;
+	word-break: break-all;
+}
+.auth-links {
+	margin-top: 30px;
+	display: flex;
+	justify-content: center;
+}
+.auth-links a {
+	margin: 0 15px;
+	color: #007bff;
+	text-decoration: none;
+	font-size: 14px;
+	transition: color 0.3s ease;
+}
+.auth-links a:hover {
+	color: #0056b3;
+}
+@media screen and (max-width: 768px) {
+	.header a {
+		margin: 0 10px;
+		font-size: 14px;
+	}
+	.container {
+		width: 90%;
+	}
+	#urlInput {
+		width: 100%;
+	}
+}
