@@ -37,6 +37,15 @@ class HomeController extends Controller{
 		$data = array();
 		$links = new Links();
 
+		
+		$data['shortenedLinks'] = $links->getAllUserLink();
+
 		$this->loadTemplate('Links', $data);
+	}
+
+	public function delete($id){
+		$links = new Links();
+		$links->delete($id);
+		header("Location: ".BASE_URL."/home/links");
 	}
 }

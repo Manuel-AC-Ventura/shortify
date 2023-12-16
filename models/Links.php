@@ -32,10 +32,23 @@ class Links extends Model{
 	public function getAllLinks(){
 		$sql = $this->db->prepare('SELECT * FROM links WHERE idUser = :id');
 		$sql->bindValue(':id', $_SESSION['shortify']);
-		$sql->execute();$sql = $this->db->query('SELECT * FROM links');
-		return $sql->fetchAll();
+		$sql->execute();
 
+		if($sql->rowCount() > 0){
+			$data = $sql->fetchAll();
+			return $data;
+		}
+	}
 
+	public function getAllUserLink(){
+		$sql = $this->db->prepare('SELECT * FROM links WHERE idUser = :id');
+		$sql->bindValue(':id', $_SESSION['shortify']);
+		$sql->execute();
+
+		if($sql->rowCount() > 0){
+			$data = $sql->fetchAll();
+			return $data;
+		}
 	}
 
 	public function getLink($id){
