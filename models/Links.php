@@ -1,18 +1,41 @@
 <?php
 class Links extends Model{
 	
-	public function shortenLink($url){
-		$sql = $this->db->prepare('INSERT INTO links SET idUser = :id, url = :url ,shortlink = :shortlink');
-		$sql->bindValue(':id', $_SESSION['shortify']);
-		$sql->bindValue(':url', $url);
-		$sql->bindValue(':shortlink', substr(md5(uniqid(mt_rand(), true)), 0, 6));
+	public function shortenLink($url, $shortlink){
+		if (isset($_SESSION['shortify'])) {
+			$sql = $this->db->prepare('INSERT INTO links SET idUser = :idUser, link = :link, shortlink = :shortlink');
+			$sql->bindValue(':idUser', $_SESSION['shortify']);
+		} else {
+			$sql = $this->db->prepare('INSERT INTO links SET link = :link, shortlink = :shortlink');
+		}
+	
+		$sql->bindValue(':link', $url);
+		$sql->bindValue(':shortlink', $shortlink);
 		$sql->execute();
+	
+		if($sql){
+			return true;
+		}
+	}
+	
+	public function getOriginalLink($shortlink){
+		$sql = $this->db->prepare('SELECT * FROM links WHERE shortlink = :shortlink');
+		$sql->bindValue(':shortlink', $shortlink);
+		$sql->execute();
+
+		if($sql->rowCount() > 0){
+			$data = $sql->fetch();
+			return $data['link'];
+		}
 	}
 
 	public function getAllLinks(){
 		$sql = $this->db->prepare('SELECT * FROM links WHERE idUser = :id');
 		$sql->bindValue(':id', $_SESSION['shortify']);
-		$sql->execute();
+		$sql->execute();$sql = $this->db->query('SELECT * FROM links');
+		return $sql->fetchAll();
+
+
 	}
 
 	public function getLink($id){

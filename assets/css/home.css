@@ -80,6 +80,13 @@ h1 {
 	color: #333;
 	word-break: break-all;
 }
+.copyText{
+	cursor: pointer;
+	color: #007bff;
+}
+.copyText:hover{
+	color: #0056b3;
+}
 .auth-links {
 	margin-top: 30px;
 	display: flex;

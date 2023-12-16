@@ -5,10 +5,12 @@ class HomeController extends Controller{
 		$links = new Links();
 
 		if(isset($_POST['url']) && !empty($_POST['url'])){
-			$url = $_POST['url'];
-			if(filter_var($url, FILTER_VALIDATE_URL)){
-				if($links->shortenLink($url)){
-					
+			if(filter_var($_POST['url'], FILTER_VALIDATE_URL)){
+				$url = $_POST['url'];
+				$shortURL = substr(md5(uniqid(rand(), true)), 0, 7);
+
+				if($links->shortenLink($url, $shortURL)){
+					$data['shortURL'] = BASE_URL."/home/redirect/".$shortURL;
 				}else{
 					$data['error'] = 'Ocorreu um erro ao tentar encurtar o link!';
 				}
@@ -17,6 +19,18 @@ class HomeController extends Controller{
 			}
 		}
 		$this->loadTemplate('Home', $data);
+	}
+
+	public function redirect($shortlink){
+		$links = new Links();
+
+		if($links->getOriginalLink($shortlink)){
+			header("Location: ".$links->getOriginalLink($shortlink));
+			exit();
+		}else{
+			header("Location: ".BASE_URL);
+			exit();
+		}
 	}
 
 	public function links(){
