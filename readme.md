@@ -37,7 +37,7 @@ O Encurtador de Links é uma aplicação simples desenvolvida em PHP que permite
    - Altere o `BASE_URL` com a URL do seu site no arquivo `index.php`.
 
 3. **Configuração:**
-   - Certifique-se de criar a estrutura do banco de dados necessária (tabela para armazenar links encurtados, por exemplo).
+   - Certifique-se de criar a estrutura do banco de dados necessária (tabela para armazenar links encurtados, por exemplo) ou importar o arquivo `shortify.sql`.
    - Configure as variáveis de ambiente, se necessário.
 
 ## Contribuição
