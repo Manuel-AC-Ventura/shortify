@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?=BASE_URL?>/assets/css/home.css">
+<link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/home.css">
 <title>Encurtador de Links</title>
 
 <div class="container">
@@ -19,29 +19,32 @@
         </div>
     <?php endif; ?>
 
-    <?php if(!isset($_SESSION['shortify']) && empty($_SESSION['shortify'])): ?>
+    <?php if (!isset($_SESSION['shortify']) && empty($_SESSION['shortify'])) : ?>
         <div class="auth-links">
-            <a href="<?=BASE_URL?>/users/login">Login</a>
+            <a href="<?= BASE_URL ?>/users/login">Login</a>
             <span>ou</span>
-            <a href="<?=BASE_URL?>/users/register">Cadastre-se</a>
+            <a href="<?= BASE_URL ?>/users/register">Cadastre-se</a>
         </div>
     <?php endif ?>
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const copyText = document.querySelector('.copyText');
 
-        copyText.addEventListener('click', function() {
+        copyText.addEventListener('click', function () {
             const textToCopy = this.textContent;
+            const tempTextArea = document.createElement('textarea');
 
-            navigator.clipboard.writeText(textToCopy)
-                .then(() => {
-                    alert('Texto copiado: ' + textToCopy);
-                })
-                .catch(err => {
-                    console.error('Erro ao copiar texto: ', err);
-                });
+            tempTextArea.value = textToCopy;
+            document.body.appendChild(tempTextArea);
+
+            tempTextArea.select();
+            document.execCommand('copy');
+
+            document.body.removeChild(tempTextArea);
+
+            alert('Texto copiado para a área de transferência: ' + textToCopy);
         });
     });
 </script>
