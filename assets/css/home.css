@@ -102,6 +102,20 @@ h1 {
 .auth-links a:hover {
 	color: #0056b3;
 }
+.tooltip {
+	position: absolute;
+	background-color: #333;
+	color: #fff;
+	padding: 8px 12px;
+	border-radius: 4px;
+	font-size: 14px;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+	z-index: 9999;
+	top: 70%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
 @media screen and (max-width: 768px) {
 	.header a {
 		margin: 0 10px;
@@ -112,5 +126,9 @@ h1 {
 	}
 	#urlInput {
 		width: 100%;
+	}
+	.tooltip {
+		font-size: 12px;
+		padding: 6px 10px;
 	}
 }

@@ -44,7 +44,21 @@
 
             document.body.removeChild(tempTextArea);
 
-            alert('Texto copiado para a área de transferência: ' + textToCopy);
+            const tooltip = document.createElement('div');
+            tooltip.classList.add('tooltip');
+            tooltip.textContent = 'Texto copiado para a área de transferência';
+            document.body.appendChild(tooltip);
+
+            // Exibe o tooltip
+            tooltip.style.opacity = 1;
+
+            // Oculta o tooltip após 5 segundos
+            setTimeout(function () {
+                tooltip.style.opacity = 0;
+                setTimeout(function () {
+                    document.body.removeChild(tooltip);
+                }, 300); // Tempo para a animação de fade-out
+            }, 5000);
         });
     });
 </script>
