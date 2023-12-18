@@ -32,7 +32,7 @@ O Encurtador de Links é uma aplicação simples desenvolvida em PHP que permite
    - Banco de dados configurado.
 
 2. **Instalação:**
-   - Clone o repositório: `[git clone https://github.com/seu-usuario/encurtador-de-links-php.git](https://github.com/Manuel-AC-Ventura/shortify.git)`
+   - Clone o repositório: `git clone https://github.com/seu-usuario/encurtador-de-links-php.git`
    - Configure as informações do banco de dados no arquivo `config.php`.
    - Altere o `BASE_URL` com a URL do seu site no arquivo `index.php`.
 
