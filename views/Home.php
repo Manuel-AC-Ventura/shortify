@@ -19,7 +19,7 @@
         </div>
     <?php endif; ?>
 
-    <?php if (!isset($_SESSION['shortify']) && empty($_SESSION['shortify'])) : ?>
+    <?php if (!$isLogged) : ?>
         <div class="auth-links">
             <a href="<?= BASE_URL ?>/users/login">Login</a>
             <span>ou</span>
@@ -49,15 +49,13 @@
             tooltip.textContent = 'Texto copiado para a área de transferência';
             document.body.appendChild(tooltip);
 
-            // Exibe o tooltip
             tooltip.style.opacity = 1;
 
-            // Oculta o tooltip após 5 segundos
             setTimeout(function () {
                 tooltip.style.opacity = 0;
                 setTimeout(function () {
                     document.body.removeChild(tooltip);
-                }, 300); // Tempo para a animação de fade-out
+                }, 300);
             }, 5000);
         });
     });

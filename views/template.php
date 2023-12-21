@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div class="header">
-		<?php if(isset($_SESSION['shortify']) && !empty($_SESSION['shortify'])): ?>
+		<?php if(!$isLogged): ?>
 			<a href="<?=BASE_URL?>/">Home</a>
 			<a href="<?=BASE_URL?>/home/links">Ver Links</a>
 			<a href="<?=BASE_URL?>/users/edit">Editar Perfil</a>

@@ -2,8 +2,11 @@
 class HomeController extends Controller{
 	public function index(){
 		$data = array();
+		$users = new Users();
 		$links = new Links();
 
+
+		$data['isLogged'] = $users->isLogged();
 		if(isset($_POST['url']) && !empty($_POST['url'])){
 			if(filter_var($_POST['url'], FILTER_VALIDATE_URL)){
 				$url = $_POST['url'];
